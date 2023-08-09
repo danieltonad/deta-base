@@ -1,0 +1,10 @@
+.space
+/env
+/__pycache__
+Spacefile
+.env
+# Ignore __pycache__ directories and compiled Python files in any subdirectory
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd

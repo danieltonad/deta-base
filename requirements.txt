@@ -1,4 +1,5 @@
 deta
 fastapi
-uvicorn[main]
+uvicorn[standard]
+starlette
 python-dotenv
