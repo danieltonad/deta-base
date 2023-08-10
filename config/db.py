@@ -11,4 +11,4 @@ deta = Deta()
 database = deta.Base("simple_db")
 
 # set key
-database.project_key = os.environ.get('project-key-jaybird-cl1')
+# database.project_key = os.environ.get('project-key-jaybird-cl1')

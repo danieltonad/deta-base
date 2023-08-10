@@ -8,9 +8,9 @@ app = FastAPI()
 
 @app.get('/')
 def index():
-    resp = database.get()
+    resp = database.fetch()
     return resp
 @app.get('/put')
 def add():
-    resp = database.put(data={'message': 100}, key=str(uuid.uuid1()))
+    resp = database.insert(data={'message': 100}, key='test-me')
     return resp
