@@ -10,21 +10,21 @@ app = FastAPI()
 @app.get('/')
 async def index():
     resp = database.fetch()
-    return resp
+    return tests_serializer(resp._items)
 
 @app.post('/')
 async def add(item: TestRequest):
-    item.id = str(uuid.uuid1())
-    resp = database.insert(data=dict(item), key=item.id)
+    id = str(uuid.uuid1())
+    resp = database.insert(data=dict(item), key=id)
     return resp
 
-@app.get('/{key}')
-async def find(key):
-    resp = database.get(key)
+@app.get('/{id}')
+async def find(id):
+    resp = database.get(id)
     return resp
 
-@app.post('/{key}')
-async def update(item: TestModel, key : str):
-    resp = database.put(dict(item), key=key)
+@app.post('/{id}')
+async def update(item: TestRequest, id : str):
+    resp = database.put(dict(item), key=id)
     return resp
  

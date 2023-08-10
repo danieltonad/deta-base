@@ -2,7 +2,7 @@ import uuid
 
 def test_serializer(user) -> dict:
     return {
-        "id": str(user['_id']),
+        "id": str(user['key']),
         "email": user['email']
     }
 
